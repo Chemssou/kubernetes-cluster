@@ -1,0 +1,5 @@
+case $1 in
+  start)
+   sudo sh -c 'docker daemon -H unix:///var/run/docker-bootstrap.sock -p /var/run/docker-bootstrap.pid  --iptables=false --ip-masq=false --mtu=1500  --bridge=none --exec-root=/var/run/docker-bootstrap --graph=/var/lib/docker-bootstrap 2> /var/log/docker-bootstrap.log 1> /dev/null &'
+esac
+

@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: zeppelin
+  namespace: spark-cluster
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30201
+  selector:
+    component: zeppelin
